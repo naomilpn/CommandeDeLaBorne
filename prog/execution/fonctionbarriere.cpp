@@ -2,13 +2,6 @@
 #include <Arduino.h>
 #include "fonctionbarriere.h"
 
-void configurationBarriere(int address)
-{
-  Wire.beginTransmission(address);
-  Wire.write(0x78);
-  Wire.endTransmission();
-}
-
 void ouverture(int address)
 {
   Wire.beginTransmission(address);
@@ -28,6 +21,10 @@ void fermeture(int address)
 int lectureBoucle(int address)
 {
   int c;
+  Wire.beginTransmission(address);
+  Wire.write(0x78);
+  Wire.endTransmission();
+  
   Wire.requestFrom(address, 1);
   while (Wire.available())
   {
@@ -36,9 +33,9 @@ int lectureBoucle(int address)
   return c;
 }
 
-boolean boucleAmond(int address)
+boolean boucleAmond()
 {
-  if (lectureBoucle(address) == 64)
+  if (lectureBoucle(MECA) == 64)
   {
     return 1;
   }
@@ -48,9 +45,9 @@ boolean boucleAmond(int address)
   }
 }
 
-boolean boucleAval(int address)
+boolean boucleAval()
 {
-  if (lectureBoucle(address) == 32)
+  if (lectureBoucle(MECA) == 32)
   {
     return 1;
   }

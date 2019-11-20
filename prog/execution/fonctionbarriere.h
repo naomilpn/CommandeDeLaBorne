@@ -9,7 +9,7 @@ void ouverture(int address);
 void fermeture(int address);
 int lectureBoucle(int address);
 void configurationBarriere(int address);
-boolean boucleAval(int address);
-boolean boucleAmond(int address);
+boolean boucleAval();
+boolean boucleAmond();
 
 #endif

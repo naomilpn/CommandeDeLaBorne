@@ -11,7 +11,6 @@ void setup()
 
 void loop()
 {
-  configurationBarriere(MECA);
   /*if (boucleAmond(MECA)== 1 && boucleAval(MECA) == 0)
     {
     do
@@ -27,19 +26,19 @@ void loop()
     while ();
       fermeture(MECA);
     }*/
-  if (boucleAmond(MECA) == 0 && boucleAval(MECA) == 1)
+  if (boucleAmond() == 0 && boucleAval() == 1)
   {
     ouverture(MECA);
     do
     {
-      if (boucleAmond(MECA) == 1 && boucleAval(MECA) == 0)
+      if (boucleAmond() == 1 && boucleAval() == 0)
       {
-        while (boucleAmond(MECA) == 1 || boucleAval(MECA) == 1)
+        while (boucleAmond() == 1 || boucleAval() == 1)
         {
         }
       }
     }
-    while (boucleAmond(MECA) == 1 || boucleAval(MECA) == 1);
+    while (boucleAmond() == 1 || boucleAval() == 1);
     fermeture(MECA);
   }
 }
