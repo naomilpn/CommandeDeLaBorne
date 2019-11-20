@@ -1,6 +1,6 @@
 /*Programme de Lecture de Carte
    Version 1.0 date : 20/11/2019
-   Lépinay Naomi
+   Lépinay 
    Le programme à l'heure actuelle permet de détecter ou non une carte insérer dans le boitier
    Suit l'algorithme du TD 1
 */
